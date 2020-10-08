@@ -1,5 +1,5 @@
-#change_list = [2, 'text', 456, 45.3, None, 5]
-#change_list = [2, 'text', 456, 6, 7]
+# change_list = [2, 'text', 456, 45.3, None, 5]
+# change_list = [2, 'text', 456, 6, 7]
 change_list = []
 number = int(input("Введите конечное число элементов:"))
 for index in range(number):
