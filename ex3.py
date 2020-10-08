@@ -22,11 +22,5 @@ for row in year_list:
             print("Autumn")
             flag = True
 
-#year_list.index(number)
-
-
-
-
-
-
+# year_list.index(number)
 
