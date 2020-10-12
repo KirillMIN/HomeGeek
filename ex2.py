@@ -3,7 +3,6 @@ def my_data(**kwargs):
     return kwargs
 
 
-
 name = input('input name:')
 surname = input('input surname:')
 year = int(input('input year:'))
