@@ -1,11 +1,12 @@
-# change_list = [2, 'text', 456, 45.3, None, 5]
-# change_list = [2, 'text', 456, 6, 7]
-change_list = []
-number = int(input("Введите конечное число элементов:"))
-for index in range(number):
-    new_element = input()
-    change_list.append(new_element)
-print(change_list)
-for index in range(int(len(change_list) / 2)):
-    change_list[2 * index], change_list[2 * index + 1] = change_list[2 * index + 1], change_list[2 * index]
-print(change_list)
+
+def my_data(**kwargs):
+    return kwargs
+
+
+name = input('input name:')
+surname = input('input surname:')
+year = int(input('input year:'))
+city = input('input city:')
+email = input('input email:')
+telephone = input('input telephone:')
+print(my_data(name=name, surname=surname, year=year, city=city, email=email, telephone=telephone))
