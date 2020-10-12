@@ -1,8 +1,19 @@
-my_str1 = input("Введите строку:").split()
-chars_per_line = 10
-for index in range(len(my_str1)):
-    if len(my_str1[index]) > 10:
-        print(index+1, ")",  my_str1[index][0:10])
-        continue
-    print(index+1, ")", my_str1[index])
+def power(x, y):
+    if x < 0 or y > 0:
+        return "You can do that"
+    elif x == 0:
+        return 0
+    else:
+        step = -1
+        speed = x
+        while step > y:
+            step = step - 1
+            # print("power:", step)
+            x = x * speed
+            # print("number:", x)
+        return f"1 / {x}"
 
+
+number1 = int(input("input x:"))
+number2 = int(input("input y:"))
+print("it is your power:", power(number1, number2))
