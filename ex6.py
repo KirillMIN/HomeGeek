@@ -19,4 +19,4 @@ def cycle_func(my_list, iteration):
 
 
 count_func(start_number=int(input("enter start number: ")), stop_number=int(input("enter stop number: ")))
-cycle_func(my_list=[1, 2], iteration=int(input("enter iteration: ")))
+cycle_func(my_list=[1, 242, 34, 5435, 456354, 54345, 3423], iteration=int(input("enter iteration: ")))
