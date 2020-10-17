@@ -1,18 +1,5 @@
-def my_sum():
-    res_sum = 0
-    func = 1
-    while func != 0:
-        number = input('Input numbers or Q for quit - ').split()
-        res = 0
-        for element in range(len(number)):
-            if number[element] == 'q' or number[element] == 'Q':
-                func = 0
-                break
-            else:
-                res = res + int(number[element])
-        res_sum = res_sum + res
-        print(f'Current sum is {res_sum}')
-    print(f' final sum is {res_sum}')
+from functools import reduce
 
 
-print(my_sum())
+print(f'Список четных значений: {[el for el in range(99, 1001) if el % 2 == 0]}')
+print(f'Результат перемножения всех элементов списка {reduce(lambda f_el,s_el: f_el * s_el, [el for el in range(99, 1001) if el % 2 == 0])}')
