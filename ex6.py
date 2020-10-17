@@ -3,4 +3,5 @@ def int_func():
     return print(word.title())
 
 
+
 int_func()

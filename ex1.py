@@ -1,13 +1,11 @@
-# Реализовать функцию, принимающую два числа (позиционные аргументы) и выполняющую их деление.
-# Числа запрашивать у пользователя, предусмотреть обработку ситуации деления на ноль.
-def division(arg1, arg2):
-    if arg2 == 0:
-        return "You cant do that"
-    else:
-        division_args = arg1 / arg2
-        return division_args
+from sys import argv
+
+file_name, worked_hour, rate, benefit = argv
 
 
-number1 = int(input("Input arg1:"))
-number2 = int(input("Input arg2:"))
-print(division(number1, number2))
+def calculation():
+    result = (int(worked_hour) * int(rate)) + int(benefit)
+    print(f"Your pay is equal {result}")
+
+
+print(calculation())
