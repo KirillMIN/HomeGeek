@@ -1,5 +1,9 @@
-from functools import reduce
+def summary():
+    with open('file.txt', 'w') as file_obj:
+        line = input('Enter the numbers space-separated:')
+        file_obj.writelines(line)
+        numb = line.split()
+        print(sum(map(int, numb)))
 
 
-print(f'Список четных значений: {[el for el in range(99, 1001) if el % 2 == 0]}')
-print(f'Результат перемножения всех элементов списка {reduce(lambda f_el,s_el: f_el * s_el, [el for el in range(99, 1001) if el % 2 == 0])}')
+summary()
