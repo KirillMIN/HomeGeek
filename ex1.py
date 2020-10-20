@@ -5,7 +5,6 @@ while write_line:
     write_line = input('Введите текст:\n')
     if not write_line:
         break
-
 my_file.close()
 my_file = open('test.txt', 'r')
 content = my_file.readlines()

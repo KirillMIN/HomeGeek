@@ -1,4 +1,10 @@
+my_file = open('file.txt', 'r')
+content = my_file.readlines()
+print(f'amount of str in file : {len(content)}')
+number = 1
+for line in content:
+    print(f' amount of words in {number} str: {len(line.split())}')
+    number += 1
 
-my_list = [3, 2, 9, 4, 2, 8, 12, 12, 15]
-new_list = [elem for elem in my_list if my_list[my_list.index(elem)] > my_list[my_list.index(elem)-1]]
-print(new_list)
+
+
