@@ -1,10 +1,21 @@
-my_file = open('file.txt', 'r')
-content = my_file.readlines()
-print(f'amount of str in file : {len(content)}')
-number = 1
-for line in content:
-    print(f' amount of words in {number} str: {len(line.split())}')
-    number += 1
+
+class Road:
+    _mas_asphalt = 500
+    _thickness = 5
+
+    def __init__(self, length, width):
+        self._length = length
+        self._width = width
+
+    def mass_check(self):
+        mass = self._length * self._width * Road._mas_asphalt * Road._thickness
+        return print(f'mass of asphalt: {mass} tones')
+
+
+village_road = Road(1000, 500)
+village_road.mass_check()
+
+
 
 
 
