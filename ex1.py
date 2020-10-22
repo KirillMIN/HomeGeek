@@ -1,12 +1,26 @@
-my_file = open('test.txt', 'w')
-write_line = input('Введите текст:\n')
-while write_line:
-    my_file.writelines(write_line)
-    write_line = input('Введите текст:\n')
-    if not write_line:
-        break
-my_file.close()
-my_file = open('test.txt', 'r')
-content = my_file.readlines()
-print(content)
-my_file.close()
+from time import sleep
+from itertools import cycle
+
+
+class TrafficLight:
+    __color = ["red", "yellow", "green"]
+
+    @staticmethod
+    def running(number):
+        count = 0
+        for item in cycle(TrafficLight.__color):
+            print(f'Traffic light switches: {item}')
+            if item == "red":
+                sleep(7)
+            elif item == "yellow":
+                sleep(2)
+            elif item == "green":
+                sleep(5)
+            if count > number:
+                break
+            count += 1
+
+
+number = int(input("how many:"))
+Traffic = TrafficLight()
+Traffic.running(number)
