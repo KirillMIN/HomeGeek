@@ -1,11 +1,21 @@
-with open('file.txt', 'r') as my_file:
-    salary = []
-    poorest = []
-    list = my_file.readlines()
-    for i in list:
-        i = i.split()
-        if int(i[1]) < 20000:
-            poorest.append(i[0])
-        salary.append(i[1])
-    print(f'Оклад меньше 20.000 {poorest}, средний оклад {sum(map(int, salary)) / len(salary)}')
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self. _income = {"wage": wage, "bonus": bonus}
+
+
+class Position(Worker):
+    def get_full_name(self):
+        print(f'{self.name} {self.surname}, {self.position}')
+
+    def get_total_income(self):
+        total_income = self._income.get('wage') + self._income.get('bonus')
+        return print(f'Your salary: {total_income}')
+
+
+Ivan = Position("Ivan", 'Bubnov', "worker", 10000000, 500000)
+Ivan.get_full_name()
+Ivan.get_total_income()
 
