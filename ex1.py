@@ -21,6 +21,6 @@ class TrafficLight:
             count += 1
 
 
-number = int(input("how many:"))
+numb = int(input("how many:"))
 Traffic = TrafficLight()
-Traffic.running(number)
+Traffic.running(numb)
