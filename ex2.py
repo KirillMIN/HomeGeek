@@ -1,21 +1,33 @@
-
-class Road:
-    _mas_asphalt = 500
-    _thickness = 5
-
-    def __init__(self, length, width):
-        self._length = length
-        self._width = width
-
-    def mass_check(self):
-        mass = self._length * self._width * Road._mas_asphalt * Road._thickness
-        return print(f'mass of asphalt: {mass} tones')
+from abc import ABC, abstractmethod
 
 
-village_road = Road(1000, 500)
-village_road.mass_check()
+class Textile(ABC):
+
+    @abstractmethod
+    def get_consumption(self):
+        pass
 
 
+class Coat(Textile):
+    def __init__(self, coat_size):
+        self.coat_size = coat_size
+
+    @property
+    def get_consumption(self):
+        return f'расход на пальто: {self.coat_size / 6.5 + 0.5}'
 
 
+class Jacket(Textile):
+    def __init__(self, jacket_size):
+        self.jacket_size = jacket_size
+
+    @property
+    def get_consumption(self):
+        return f'расход на костюм: {self.jacket_size * 2 + 0.3}'
+
+
+coat = Coat(2)
+jacket = Jacket(4)
+print(coat.get_consumption)
+print(jacket.get_consumption)
 
