@@ -1,21 +1,38 @@
-class Worker:
-    def __init__(self, name, surname, position, wage, bonus):
-        self.name = name
-        self.surname = surname
-        self.position = position
-        self. _income = {"wage": wage, "bonus": bonus}
+
+class Cell:
+    def __init__(self, quantity):
+        self.quantity = quantity
+
+    def __str__(self):
+        return f'Результат: {self.quantity * "*"}'
+
+    def __add__(self, other):
+        return self.quantity + other.quantity
+
+    def __sub__(self, other):
+        return self.quantity - other.quantity if (self.quantity - other.quantity) >= 0 else print('Отрицательно')
+
+    def __mul__(self, other):
+        return int(self.quantity * other.quantity)
+
+    def __truediv__(self, other):
+        return round(self.quantity // other.quantity)
+
+    def make_order(self, cells_row):
+        row = ''
+        for i in range(int(self.quantity / cells_row)):
+            row += f'{"*" * cells_row} \n'
+        row += f'{"*" * (self.quantity % cells_row)}'
+        return print(row)
 
 
-class Position(Worker):
-    def get_full_name(self):
-        print(f'{self.name} {self.surname}, {self.position}')
-
-    def get_total_income(self):
-        total_income = self._income.get('wage') + self._income.get('bonus')
-        return print(f'Your salary: {total_income}')
-
-
-Ivan = Position("Ivan", 'Bubnov', "worker", 10000000, 500000)
-Ivan.get_full_name()
-Ivan.get_total_income()
+cells_1 = Cell(10)
+cells_2 = Cell(5)
+print(cells_1)
+print(cells_1)
+print(cells_1 + cells_2)
+print(cells_2 - cells_1)
+print(cells_1 * cells_2)
+# print(cells_1 / cells_2)
+cells_1.make_order(2)
 
