@@ -34,5 +34,5 @@ print(cells_1 + cells_2)
 print(cells_2 - cells_1)
 print(cells_1 * cells_2)
 # print(cells_1 / cells_2)
-cells_1.make_order(2)
+cells_1.make_order(3)
 
