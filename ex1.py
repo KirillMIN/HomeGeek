@@ -1,25 +1,22 @@
 
-class Matrix:
-    def __init__(self, list_of_lists):
-        self.list_of_lists = list_of_lists
+class Data:
+    def __init__(self, day_month_year):
+        self.day_month_year = str(day_month_year)
 
-    def __str__(self):
-        string = ''
-        for i in self.list_of_lists:
-            for j in i:
-                string = string + str(j) + ' '
-            string = string + '\n'
-        return string
+    @classmethod
+    def get_int(cls, day_month_year):
+        day_month_year = day_month_year.split('-')
+        date = [int(elem) for elem in day_month_year]
+        return date
 
-    def __add__(self, other):
-        for i in range(len(self.list_of_lists)):
-            for j in range(len(self.list_of_lists[i])):
-                self.list_of_lists[i][j] = self.list_of_lists[i][j] + other.list_of_lists[i][j]
-        return Matrix(self.list_of_lists)
+    @staticmethod
+    def get_valid(day, month, year):
+        if 1 <= day <= 31 and 1 <= month <= 12 and 1 <= year <= 2020:
+            return print("Right data")
+        else:
+            return print("Wrong data")
 
 
-m_1 = Matrix([[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]])
-m_2 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
-print(m_1)
-print(m_2)
-print(m_1 + m_2)
+print(Data.get_int('12-01-2001'))
+Data.get_valid(1, 2, 3)
+
