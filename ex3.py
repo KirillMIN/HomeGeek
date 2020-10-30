@@ -1,19 +1,25 @@
-class IntNumbers(Exception):
-    def __init__(self, txt):
-        self.txt = txt
+class NumbersError:
+    def __init__(self):
+        self.my_list = []
+
+    def list_input(self):
+        while True:
+            try:
+                value = int(input('input values:'))
+                self.my_list.append(value)
+                print(f'list - {self.my_list}')
+            except:
+                print(f"You can't write str")
+                yes_no = input(f'Do you want to write again? Y/N ')
+
+                if yes_no == 'Y':
+                    print(self.list_input())
+                elif yes_no == 'N':
+                    return f'end of try'
+                else:
+                    break
 
 
-my_list = []
-element = 0
-while element != 3:
-    my_list[element] = my_list.insert(element, int(input('input numbers: ')))
-    element = element + 1
-try:
-    for elem in my_list:
-        if type(elem) != int:
-            raise IntNumbers("You don't input int number !")
-except IntNumbers as err:
-    print(err)
-else:
-    print(f"Your list: {my_list}")
+try_ex = NumbersError()
+print(try_ex.list_input())
 
